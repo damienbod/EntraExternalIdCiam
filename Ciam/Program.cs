@@ -6,8 +6,12 @@ using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDistributedMemoryCache();
+
 builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-        .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("EntraExternalID"));
+        .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("EntraExternalID"))
+        .EnableTokenAcquisitionToCallDownstreamApi()
+        .AddDistributedTokenCaches();
 
 builder.Services.Configure<MicrosoftIdentityOptions>(
     OpenIdConnectDefaults.AuthenticationScheme, options =>
