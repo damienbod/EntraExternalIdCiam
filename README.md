@@ -10,9 +10,9 @@ Code Flow with PKCE using Microsoft.Identity.Web client
 builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-        .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("EntraExternalID"))
-        .EnableTokenAcquisitionToCallDownstreamApi()
-        .AddDistributedTokenCaches();
+    .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("EntraExternalID"))
+    .EnableTokenAcquisitionToCallDownstreamApi()
+    .AddDistributedTokenCaches();
 ```
 
 App.Settings for CIAM
