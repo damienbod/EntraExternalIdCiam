@@ -9,20 +9,21 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-        .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("EntraExternalID"))
-        .EnableTokenAcquisitionToCallDownstreamApi()
-        .AddDistributedTokenCaches();
+    .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("EntraExternalID"))
+    .EnableTokenAcquisitionToCallDownstreamApi()
+    .AddDistributedTokenCaches();
 
 builder.Services.Configure<MicrosoftIdentityOptions>(
     OpenIdConnectDefaults.AuthenticationScheme, options =>
-{
-    options.Prompt = "select_account";
-});
+    {
+        options.Prompt = "select_account";
+    });
 
 builder.Services.AddAuthorization(options =>
 {
     options.FallbackPolicy = options.DefaultPolicy;
 });
+
 builder.Services.AddRazorPages(options => {
     options.Conventions.AllowAnonymousToPage("/Index");
 })
