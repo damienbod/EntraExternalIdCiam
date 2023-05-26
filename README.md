@@ -30,6 +30,8 @@ App.Settings for CIAM
 
 ## Links
 
+https://learn.microsoft.com/en-us/azure/active-directory/external-identities/customers
+
 https://learn.microsoft.com/en-us/azure/active-directory/external-identities/
 
 https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-external-id
