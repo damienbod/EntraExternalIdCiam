@@ -1,6 +1,8 @@
 # Microsoft Entra External ID for customers (CIAM)
 
-[![.NET 8](https://github.com/damienbod/EntraExternalIdCiam/actions/workflows/dotnet.yml/badge.svg)](https://github.com/damienbod/EntraExternalIdCiam/actions/workflows/dotnet.yml)
+[![.NET](https://github.com/damienbod/EntraExternalIdCiam/actions/workflows/dotnet.yml/badge.svg)](https://github.com/damienbod/EntraExternalIdCiam/actions/workflows/dotnet.yml)
+
+[ASP.NET Core authentication using Microsoft Entra External ID for customers (CIAM)](https://damienbod.com)
 
 ## Links
 
