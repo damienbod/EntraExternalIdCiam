@@ -15,7 +15,7 @@ builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
     .AddDistributedTokenCaches();
 ```
 
-App.Settings for CIAM
+appsettings.json for CIAM
 
 ```json
 "EntraExternalID": {
