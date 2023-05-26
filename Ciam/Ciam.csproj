@@ -1,16 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>azure_ad_b2c</RootNamespace>
+    <RootNamespace>azure_ad_ciam</RootNamespace>
     <UserSecretsId>41967c42-196e-42d1-b7b9-4a490d483871</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Identity.Web" Version="1.25.10" />
-    <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.25.10" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="2.11.0" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="2.11.0" />
   </ItemGroup>
 
 </Project>
