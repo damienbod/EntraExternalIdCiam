@@ -21,6 +21,12 @@ builder.Services.Configure<MicrosoftIdentityOptions>(
 
 builder.Services.AddAuthorization(options =>
 {
+    options.AddPolicy("UserPolicy", policy => {
+            policy.RequireClaim("roles", "user-role");
+    });
+    options.AddPolicy("AdminPolicy", policy => {
+        policy.RequireClaim("roles", "admin-role");
+    });
     options.FallbackPolicy = options.DefaultPolicy;
 });
 

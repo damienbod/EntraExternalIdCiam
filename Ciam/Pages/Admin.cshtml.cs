@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Ciam.Pages;
 
+[Authorize(Policy = "AdminPolicy")]
 public class AdminModel : PageModel
 {
     public List<string> Roles { get; set; } = new List<string>();
