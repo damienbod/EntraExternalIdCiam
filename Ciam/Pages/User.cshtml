@@ -1,0 +1,19 @@
+﻿@page
+@model UserModel
+@{
+    ViewData["Title"] = "User page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Only users here</h1>
+
+   <hr />
+
+@{
+    foreach( var role in Model.Roles)
+    {
+        <p><b>Role:</b> @role</p>
+    }
+}
+
+</div>
