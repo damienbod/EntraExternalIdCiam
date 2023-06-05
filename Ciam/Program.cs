@@ -3,26 +3,40 @@ using Microsoft.Identity.Web.UI;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.IdentityModel.Logging;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authorization;
+using Ciam;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-        .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("EntraExternalID"))
-        .EnableTokenAcquisitionToCallDownstreamApi()
-        .AddDistributedTokenCaches();
+    .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("EntraExternalID"))
+    .EnableTokenAcquisitionToCallDownstreamApi()
+    .AddDistributedTokenCaches();
 
 builder.Services.Configure<MicrosoftIdentityOptions>(
     OpenIdConnectDefaults.AuthenticationScheme, options =>
-{
-    options.Prompt = "select_account";
-});
+    {
+        options.Prompt = "select_account";
+    });
+
+builder.Services.AddSingleton<IAuthorizationHandler, UserAdminHandler>();
 
 builder.Services.AddAuthorization(options =>
 {
+    options.AddPolicy("UserPolicy", policy => {
+        policy.RequireClaim("roles", "user-role");
+    });
+    options.AddPolicy("AdminPolicy", policy => {
+        policy.RequireClaim("roles", "admin-role");
+    });
+    options.AddPolicy("UserAdminPolicy", policy => {
+        policy.AddRequirements(new UserAdminRequirement());
+    });
     options.FallbackPolicy = options.DefaultPolicy;
 });
+
 builder.Services.AddRazorPages(options => {
     options.Conventions.AllowAnonymousToPage("/Index");
 })

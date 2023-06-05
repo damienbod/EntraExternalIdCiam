@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Ciam.Pages;
 
-public class IndexModel : PageModel
+[Authorize(Policy = "UserAdminPolicy")]
+public class UserAdminModel : PageModel
 {
     public List<string> Roles { get; set; } = new List<string>();
 

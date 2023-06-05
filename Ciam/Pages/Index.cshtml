@@ -7,4 +7,14 @@
 <div class="text-center">
     <h1 class="display-4">Entra External ID</h1>
     <p>Entra External ID Web client (OIDC confidential code flow with PKCE client)</p>
+
+   <hr />
+
+@{
+    foreach( var role in Model.Roles)
+    {
+        <p><b>Role:</b> @role</p>
+    }
+}
+
 </div>
