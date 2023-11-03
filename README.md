@@ -28,6 +28,9 @@ appsettings.json for CIAM
 },
 ```
 
+## History
+
+- 2023-11-03 Updated packages
 
 ## Links
 
