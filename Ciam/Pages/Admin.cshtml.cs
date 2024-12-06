@@ -11,9 +11,9 @@ public class AdminModel : PageModel
     public void OnGet()
     {
         var claims = User.Claims.ToList();
-        foreach(var claim in claims)
+        foreach (var claim in claims)
         {
-            if(claim != null && claim.Type == "roles")
+            if (claim != null && claim.Type == "roles")
             {
                 Roles.Add(claim.Value);
             }

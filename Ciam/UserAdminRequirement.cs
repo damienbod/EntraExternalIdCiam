@@ -2,4 +2,4 @@
 
 namespace Ciam;
 
-public class UserAdminRequirement : IAuthorizationRequirement {}
+public class UserAdminRequirement : IAuthorizationRequirement { }

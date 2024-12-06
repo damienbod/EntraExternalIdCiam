@@ -1,10 +1,10 @@
+using Ciam;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.IdentityModel.Logging;
 using System.IdentityModel.Tokens.Jwt;
-using Microsoft.AspNetCore.Authorization;
-using Ciam;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,19 +25,23 @@ builder.Services.AddSingleton<IAuthorizationHandler, UserAdminHandler>();
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("UserPolicy", policy => {
+    options.AddPolicy("UserPolicy", policy =>
+    {
         policy.RequireClaim("roles", "user-role");
     });
-    options.AddPolicy("AdminPolicy", policy => {
+    options.AddPolicy("AdminPolicy", policy =>
+    {
         policy.RequireClaim("roles", "admin-role");
     });
-    options.AddPolicy("UserAdminPolicy", policy => {
+    options.AddPolicy("UserAdminPolicy", policy =>
+    {
         policy.AddRequirements(new UserAdminRequirement());
     });
     options.FallbackPolicy = options.DefaultPolicy;
 });
 
-builder.Services.AddRazorPages(options => {
+builder.Services.AddRazorPages(options =>
+{
     options.Conventions.AllowAnonymousToPage("/Index");
 })
 .AddMvcOptions(options => { })
