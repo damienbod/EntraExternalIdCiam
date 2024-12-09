@@ -4,6 +4,7 @@
 
 - [ASP.NET Core authentication using Microsoft Entra External ID for customers (CIAM)](https://damienbod.com/2023/05/30/asp-net-core-authentication-using-microsoft-entra-external-id-for-customers-ciam/)
 - [ASP.NET Core authorization using Entra External ID CIAM and Azure AD security groups](https://damienbod.com/2023/06/05/asp-net-core-authorization-using-entra-external-id-ciam-and-azure-ad-security-groups/)
+- [Using Entra External ID with an Auth0 OpenID Connect identity provider](https://damienbod.com/2024/12/09/using-entra-external-id-with-an-auth0-openid-connect-identity-provider/)
 
 Code Flow with PKCE using Microsoft.Identity.Web client
 
