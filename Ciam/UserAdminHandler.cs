@@ -20,7 +20,7 @@ public class UserAdminHandler : AuthorizationHandler<UserAdminRequirement>
 
         if (adminRole == null)
         {
-            userRole = context.User.FindFirst(c => c.Type == msMagicNamespace && c.Value == "admin-role");
+            adminRole = context.User.FindFirst(c => c.Type == msMagicNamespace && c.Value == "admin-role");
         }
 
         if (userRole != null || adminRole != null)
