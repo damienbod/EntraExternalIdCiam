@@ -31,6 +31,7 @@ appsettings.json for CIAM
 
 ## History
 
+- 2025-06-11 Updated packages
 - 2025-05-18 Updated packages
 - 2025-04-01 Updated packages
 - 2024-12-09 Updated packages, new blog
