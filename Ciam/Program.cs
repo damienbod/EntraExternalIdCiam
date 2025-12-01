@@ -15,11 +15,11 @@ builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
     .EnableTokenAcquisitionToCallDownstreamApi()
     .AddDistributedTokenCaches();
 
-builder.Services.Configure<MicrosoftIdentityOptions>(
-    OpenIdConnectDefaults.AuthenticationScheme, options =>
-    {
-        options.Prompt = "select_account";
-    });
+//builder.Services.Configure<MicrosoftIdentityOptions>(
+//    OpenIdConnectDefaults.AuthenticationScheme, options =>
+//    {
+//        options.Prompt = "select_account";
+//    });
 
 builder.Services.AddSingleton<IAuthorizationHandler, UserAdminHandler>();
 
